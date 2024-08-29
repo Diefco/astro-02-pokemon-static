@@ -61,10 +61,12 @@ image={imageSrc} >
 </MainLayout>
 
 <script>
-    interface FavoritePokemon {
-        name: string;
-        id: number;
-    }
+    
+    import type { FavoritePokemon } from "@/interfaces/favorite-pokemon";
+    // interface FavoritePokemon {
+    //     name: string;
+    //     id: number;
+    // }
 
     // Lifecycle events
     
@@ -92,7 +94,6 @@ image={imageSrc} >
         let favoritePokemons: FavoritePokemon[] = JSON.parse(
             localStorage.getItem('favorites') ?? '[]'
         );
-        console.log("🚀 ~ handlePageLoad ~ favoritePokemon:", favoritePokemons)
 
         const btnFavorite = document.querySelector(
             '#btn-favorite'
