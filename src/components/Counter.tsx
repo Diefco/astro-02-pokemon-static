@@ -1,7 +1,8 @@
-import { createSignal, type Component } from "solid-js";
+import { createSignal, type Component, type JSX } from "solid-js";
 
 interface Props {
   initValue: number;
+  children?: JSX.Element;
 }
 
 export const Counter: Component<Props> = (props) => {
@@ -9,7 +10,8 @@ export const Counter: Component<Props> = (props) => {
 
   return (
     <div class="grid gap-4 mt-5">
-      <h1 class="text-5xl">Counter</h1>
+      {/* <h1 class="text-5xl">Counter</h1> */}
+      <div>{props.children}</div>
       <h3 class="text-xl">Value: {counter()}</h3>
       <div>
         <button
